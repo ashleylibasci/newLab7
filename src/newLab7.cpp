@@ -51,5 +51,15 @@ void loop()
   if (display.pressedA())
   {
     Blynk.logEvent("oledButtonPressed");
+    display.loop();
+    display.clearDisplay();
+    display.setTextSize(1);
+    display.setTextColor(WHITE);
+    display.setCursor(0, 0);
+    display.println(celsius);
+    display.setCursor(0, 15);
+    display.println("button pressed");
+    display.display();
+    delay(3000);
   }
 }
